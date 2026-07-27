@@ -26,7 +26,7 @@ def product(name:str=None,price:int=1000):
 #POST API
 
 @app.post("/details")
-def det(user:dict):
+def det(user:dict):#json input handling
    return{"message":"welcome THIS IS POST API","users":user}
        
 #we cannot directly handle post api in browser
@@ -42,3 +42,16 @@ class User(BaseModel):
 @app.post("/detail")
 def detail(user:User):
    return{"message":"welcome THIS IS POST API","users":user}
+#if we use pydantic we dont have to manually validate  the usersdata
+
+
+#nested schemas
+# we can use above schema User in another class
+class user_details(BaseModel):
+   personal_data:User
+   address:str
+   contact:int=9741000000
+
+@app.post("/userdetails")
+def userdetails(user:user_details):
+   return {"user":user}
