@@ -55,3 +55,6 @@ class user_details(BaseModel):
 @app.post("/userdetails")
 def userdetails(user:user_details):
    return {"user":user}
+
+
+
