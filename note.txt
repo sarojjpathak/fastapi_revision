@@ -1,0 +1,8 @@
+note 1  for path of request 
+        Request.url.path
+
+note 2 for time 
+        we import time and use time.time()  this is basically time stamp
+          #It represents the number of seconds since January 1, 1970, UTC.
+          print(datetime.fromtimestamp(timestamp))
+          2026-08-11 14:20:35.123456
